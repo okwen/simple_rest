@@ -24,6 +24,7 @@ func BindRouting(router *gin.Engine) {
 
 		
 		v1.POST("/user/create", user.CreatetUser)
+		v1.POST("/user/delete", user.DeletetUser)
 	}
 
 }
