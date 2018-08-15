@@ -36,11 +36,6 @@ func DeletetUser(c *gin.Context) {
 	return
 }
 
-// DeletetUserResult
-type DeletetUserResult struct {
-	IsOK	bool
-}
-
 // CreateUserWithArguments : 新增使用者
 func DeletetUserWithAccount(account string) (result *DeletetUserResult, err error) {
 	dbS := database.GetConn(env.AccountDB)
@@ -63,7 +58,7 @@ func DeletetUserWithAccount(account string) (result *DeletetUserResult, err erro
 		}
 	}  
 	
-	result = &DeletetUserResult {
+	result = &UserResult {
 		IsOK: isSuceed,
 	}
 

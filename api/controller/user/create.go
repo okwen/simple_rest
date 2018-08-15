@@ -34,7 +34,7 @@ func CreatetUser(c *gin.Context) {
 		isSuceed = false
 	}
 
-	result := CreateUserResult {
+	result := UserResult {
 		IsOK: isSuceed,
 	}
 
@@ -42,11 +42,6 @@ func CreatetUser(c *gin.Context) {
 
 	c.JSON(http.StatusOK, res)
 	return
-}
-
-// CreateUserResult
-type CreateUserResult struct {
-	IsOK	bool
 }
 
 // CreateUserWithArguments : 新增使用者
