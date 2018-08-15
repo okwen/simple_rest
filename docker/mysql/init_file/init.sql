@@ -9,7 +9,7 @@ USE `account_db`;
 # 會員資料表
 CREATE TABLE IF NOT EXISTS `account_db`.`user` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `account` varchar(50) NOT NULL COMMENT '帳號',
+  `account` varchar(50) NOT NULL UNIQUE COMMENT '帳號',
   `password` varchar(50) NOT NULL COMMENT '密碼',
   `created_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
   PRIMARY KEY (`id`)
