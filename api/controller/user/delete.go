@@ -37,7 +37,7 @@ func DeletetUser(c *gin.Context) {
 }
 
 // CreateUserWithArguments : 新增使用者
-func DeletetUserWithAccount(account string) (result *DeletetUserResult, err error) {
+func DeletetUserWithAccount(account string) (result *UserResult, err error) {
 	dbS := database.GetConn(env.AccountDB)
 
 	sql := " DELETE FROM user WHERE account = ?"
