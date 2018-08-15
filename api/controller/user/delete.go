@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// GetAccountInput : Input參數
+// GetDeleteAccountInput : Input參數
 type GetDeleteAccountInput struct {
 	Account string `form:"Account"`
 }
@@ -18,7 +18,7 @@ type GetDeleteAccountInput struct {
 // DeletetUser API
 func DeletetUser(c *gin.Context) {
 	res := &protocol.Response{}
-	input := &GetAccountInput{}
+	input := &GetDeleteAccountInput{}
 
 	// 綁定Input參數至結構中
 	if err := c.Bind(input); err != nil {
@@ -36,7 +36,7 @@ func DeletetUser(c *gin.Context) {
 	return
 }
 
-// CreateUserWithArguments : 新增使用者
+// DeletetUserWithAccount : 刪除使用者
 func DeletetUserWithAccount(account string) (result *UserResult, err error) {
 	dbS := database.GetConn(env.AccountDB)
 

@@ -10,8 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// GetAccountInput : Input參數
-type GetAccountInput struct {
+// GetCreateAccountInput : Input參數
+type GetCreateAccountInput struct {
 	Account string `form:"Account"`
 	Password string `form:"Password"`
 }
@@ -19,7 +19,7 @@ type GetAccountInput struct {
 // GetUser API
 func CreatetUser(c *gin.Context) {
 	res := &protocol.Response{}
-	input := &GetAccountInput{}
+	input := &GetCreateAccountInput{}
 
 	// 綁定Input參數至結構中
 	if err := c.Bind(input); err != nil {
